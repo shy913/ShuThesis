@@ -1,0 +1,54 @@
+% !Mode:: "TeX:UTF-8"
+\documentclass[type=master, openany, pifootnote]{shuthesis}
+% 选项:
+%type=[master],            % 必选
+%  secret,                          % 可选 (如果论文需要保密, 这一项需要打开)
+%  pifootnote,                      % 可选（建议打开）
+%  openany|openright,               % 可选 (章首页是右开还是任意开, 默认是右开)
+%  nocolor                          % 提交最终版本时请打开此选项
+\usepackage{pdfpages}
+\usepackage{shuthesis}
+\usepackage{times}
+
+\graphicspath{{figures/}}
+
+%\setCJKmainfont{FandolSong-Regular}[BoldFont=FandolHei-Regular,ItalicFont=FandolKai-Regular] % Linux
+%\setCJKmainfont{Songti SC Light}[BoldFont=Heiti SC Light,ItalicFont=Kaiti SC, BoldItalicFont=Kaiti SC Bold] % MacOS 
+
+\begin{document}
+% 封面
+\newpage
+\includepdf[pages={1}]{cover.pdf}
+% 原创性声明
+\newpage
+\includepdf[pages={2}]{cover.pdf}
+
+\frontmatter
+\include{data/abstract} % 先摘要再目录
+{
+    \hypersetup{linkcolor=black}
+    \tableofcontents
+    \thispagestyle{empty}
+}
+
+\mainmatter
+\include{data/test}
+\include{data/chap01}
+\include{data/chap02}
+\include{data/chap03}
+\include{data/chap04}
+
+\include{data/acknowledgement}
+
+\bibliography{../reference/refs}  % 因为 out 目录是子目录
+\bibliographystyle{../shuthesis}  % 因为 out 目录是子目录
+
+\backmatter
+\begin{appendix}
+\input{data/appendix}
+\end{appendix}
+
+\newpage
+\includepdf[pages={20}]{cover.pdf}
+
+\end{document}

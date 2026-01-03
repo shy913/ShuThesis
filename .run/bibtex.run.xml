@@ -1,0 +1,14 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="bibtex" type="BIBTEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory" activateToolWindowBeforeRun="false">
+    <texify-bibtex>
+      <compiler>BIBTEX</compiler>
+      <compiler-path />
+      <compiler-arguments />
+      <envs />
+      <main-file>$PROJECT_DIR$/paper/main.tex</main-file>
+      <aux-dir>$PROJECT_DIR$/paper/out</aux-dir>
+      <latex-distribution>PROJECT_SDK</latex-distribution>
+    </texify-bibtex>
+    <method v="2" />
+  </configuration>
+</component>
