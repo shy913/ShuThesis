@@ -359,7 +359,7 @@
       \advance\leftskip\@tempdima
       \hskip -\leftskip
       % numberline is called here, and it uses \@tempdima
-      {\heiti #1}
+      {\heiti\sihao\bfseries #1}
       \leaders\hbox{$\m@th\mkern \@dotsep mu\hbox{.}\mkern \@dotsep mu$}\hfill
       \nobreak{\normalfont\normalcolor #2}\par
       \penalty\@highpenalty
@@ -369,13 +369,14 @@
   \ifnum \c@tocdepth >\z@
     \addpenalty\@secpenalty
     \addvspace{4bp \@plus\p@}%
-    \setlength\@tempdima{2.5em}%
+    \setlength\@tempdima{2em}%
     \begingroup
       \parindent \z@ \rightskip \@pnumwidth
       \parfillskip -\@pnumwidth
       \leavevmode
       \advance\leftskip\@tempdima
       \hskip -\leftskip
+      \hskip 1.5em
       {\heiti\sihao #1}\nobreak
       \leaders\hbox{$\m@th\mkern \@dotsep mu\hbox{.}\mkern \@dotsep mu$}\hfill
       \nobreak{\normalfont\normalcolor #2}\par
@@ -392,7 +393,7 @@
       \leavevmode
       \advance\leftskip\@tempdima
       \hskip -\leftskip
-      \hskip 1.5em
+      \hskip 3em
       {\heiti\xiaosi #1}\nobreak
       \leaders\hbox{$\m@th\mkern \@dotsep mu\hbox{.}\mkern \@dotsep mu$}\hfill
       \nobreak{\normalfont\normalcolor #2}\par
