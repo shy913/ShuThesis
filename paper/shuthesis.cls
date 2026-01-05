@@ -630,6 +630,7 @@
 %   labelsep*=0.5cm,
 %   itemindent=0pt,
 %  }
+\newcommand\conclusion{\shu@chapter*[结论]{结论}}
 \newenvironment{acknowledgement}{\shu@chapter*[致谢]{致\quad 谢}}{}
 \def\shu@starttoc#1{% #1: float type, prepend type name in \listof*** entry.
   \let\oldnumberline\numberline
