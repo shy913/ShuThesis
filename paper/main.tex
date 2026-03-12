@@ -27,7 +27,9 @@
 \include{data/abstract} % 先摘要再目录
 {
     \hypersetup{linkcolor=black}
-    \tableofcontents
+    {\linespread{1}\selectfont % 可以通过改变\linespread{}参数来实现目录的行间距的更改，默认为1，如果目录超过一页可以缩小此参数。
+        \tableofcontents
+    }
     \thispagestyle{empty}
 }
 
@@ -42,7 +44,7 @@
 \input{data/conclusion}
 
 \bibliography{../reference/refs}
-\bibliographystyle{../shuthesis}
+\bibliographystyle{gbt7714-numerical}
 
 \begin{appendix}
 \include{data/appendix}
