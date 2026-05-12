@@ -221,6 +221,13 @@
   \fancyfoot[C]{\wuhao\thepage}
   \renewcommand{\headrulewidth}{0.7pt}
   \renewcommand{\footrulewidth}{0pt}}
+\fancypagestyle{shu@headings@nopagenum}{%
+  \fancyhead{}
+  \fancyhead[LE]{\xiaowu 上海大学本科毕业论文（设计）}
+  \fancyhead[LO]{\xiaowu 上海大学本科毕业论文（设计）}
+  \fancyfoot{}
+  \renewcommand{\headrulewidth}{0.7pt}
+  \renewcommand{\footrulewidth}{0pt}}
 \ctexset{%
   space=auto,
   autoindent=true}
