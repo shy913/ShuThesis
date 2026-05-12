@@ -210,5 +210,5 @@ __marimo__/
 #documents/
 
 # 编译结果
-paper/out/*
+out/*
 *.aux

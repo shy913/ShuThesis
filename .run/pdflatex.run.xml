@@ -8,12 +8,13 @@
       <viewer-command />
       <compiler-arguments />
       <envs />
-      <expand-macros-in-environment-variables>false</expand-macros-in-environment-variables>
+      <expand-macros-in-environment-variables>true</expand-macros-in-environment-variables>
       <before-run-command />
-      <main-file>$PROJECT_DIR$/paper/main.tex</main-file>
-      <output-path>$PROJECT_DIR$/paper/out</output-path>
+      <main-file>$PROJECT_DIR$/main.tex</main-file>
+      <output-path>$PROJECT_DIR$/out</output-path>
       <auxil-path>{projectDir}/auxil</auxil-path>
-      <compile-twice>false</compile-twice>
+      <working-directory>{mainFileParent}</working-directory>
+      <compile-twice>true</compile-twice>
       <output-format>PDF</output-format>
       <latex-distribution>TEXLIVE</latex-distribution>
       <has-been-run>true</has-been-run>

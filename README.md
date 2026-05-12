@@ -1,62 +1,24 @@
-# 项目结构
-```text
-ShuThesis/
-├── .git/ (Git仓库目录)
-├── .gitignore (4.8KB)
-├── .python-version (0.0KB)
-├── .run/ (PyCharm运行配置目录)
-├── README.md (0.5KB)
-├── pyproject.toml (0.3KB)
-├── uv.lock (262.1KB)
-├── paper/ (论文模板目录)
-│   ├── README.md (1.4KB)
-│   ├── cover.pdf (724.4KB)
-│   ├── data/ (论文章节数据目录)
-│   │   ├── abstract.tex (0.3KB)
-│   │   ├── acknowledgement.tex (0.2KB)
-│   │   ├── appendix.tex (0.9KB)
-│   │   ├── chap01.tex (4.0KB)
-│   │   ├── chap02.tex (1.3KB)
-│   │   ├── chap03.tex (2.3KB)
-│   │   ├── chap04.tex (1.1KB)
-│   │   └── test.tex (0.3KB)
-│   ├── dtx-style.sty (4.4KB)
-│   ├── figures/ (论文图片目录)
-│   │   ├── shu.pdf (4.9KB)
-│   │   ├── shublack.pdf (4.9KB)
-│   │   ├── shulogo.pdf (18.6KB)
-│   │   ├── shulogo.png (59.2KB)
-│   │   └── shulogoblack.pdf (18.6KB)
-│   ├── main.tex (1.5KB)
-│   ├── make-doc.bat (0.4KB)
-│   ├── out/ (输出目录)
-│   ├── reference/ (参考文献目录)
-│   │   └── refs.bib (2.7KB)
-│   ├── shuthesis.bst (56.1KB)
-│   ├── shuthesis.cfg (2.9KB)
-│   ├── shuthesis.cls (22.7KB)
-│   ├── shuthesis.dtx (73.0KB)
-│   ├── shuthesis.ins (2.7KB)
-│   ├── shuthesis.pdf (404.9KB)
-│   └── shuthesis.sty (0.6KB)
-└── project/ (Python项目目录)
-    ├── __init__.py (0.0KB)
-    └── main.py (0.1KB)
-```
+# 关于 [SHU-Bachelor-Thesis-OSC](https://github.com/EnJiang/SHU-Bachelor-Thesis-OSC)
+本模板是上海大学本科生毕业论文latex模板-开源社区版本。
 
+此模板基于[SHU-Bachelor-Thesis](https://github.com/alfredbowenfeng/SHU-Bachelor-Thesis)修改得来。
 
-# LaTeX 论文部分
+本身[SHU-Bachelor-Thesis](https://github.com/alfredbowenfeng/SHU-Bachelor-Thesis)又是由
+[ShuThesis](https://github.com/ahhylau/shuthesis)修改得来的。
+后者是一个支持上海大学硕士和博士毕业论文的latex模板，前者对其进行了一定的改进，但是还有诸多遗留问题。
 
-本模板由 [Overleaf 上 SHUOSC](https://www.overleaf.com/latex/templates/shu-bachelor-thesis-osc-master/ygndtxdbqnyf) 的模板改进而来，更改了一些格式上的问题，以符合最新要求。
+本模板对[SHU-Bachelor-Thesis](https://github.com/alfredbowenfeng/SHU-Bachelor-Thesis)
+遗留的问题又进行了进一步改进，使其尽量与上海大学本科生论文的MS Word版本格式一致。
 
-模板可能还有一些问题，如摘要字体等。
+感谢前面几位同学的工作和开源精神。
+希望本模板能帮助到本科生同学，希望越来越多的同学能加入到开源社区大家庭。
 
-编译方法：`pdfLaTeX -> BibTeX -> pdfLaTeX -> pdfLaTeX`。如果是JetBrains编辑器的话应该可以直接使用`.run/`下的两个配置文件。
+模板的维护是一个相当考验细节处理的工作，欢迎pull requests。
+作者会尽可能尽快处理。
 
-论文输出目录在 `out/` 下。
-
-# Python开发部分
-
-推荐使用 uv 管理 Python 环境。
-
-可以使用 Python 进行开发，输出内容可以直接指定到论文文件夹。
+# 使用步骤
+- 下载本模板到本地解压，或git clone本模板
+- 用学院给的论文模板创建封面，命名为 cover.pdf 文件保存至根目录下（替换原文件）
+- 修改 data 文件夹下的.tex文件，编辑论文内容
+- 通过根目录下的 main.tex 文件添加或删去章节
+- 通过根目录下的 main.tex 文件编译

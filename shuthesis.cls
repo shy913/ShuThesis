@@ -201,6 +201,8 @@
 \shu@def@fontsize{xiaoliu}{6.5bp}
 \shu@def@fontsize{qihao}{5.5bp}
 \shu@def@fontsize{bahao}{5bp}
+\setCJKfamilyfont{dengxian}{DengXian}
+\newcommand{\dengxian}{\CJKfamily{dengxian}}
 \fancypagestyle{shu@empty}{%
   \fancyhf{}
   \renewcommand{\headrulewidth}{0pt}
@@ -366,7 +368,7 @@
       \advance\leftskip\@tempdima
       \hskip -\leftskip
       % numberline is called here, and it uses \@tempdima
-      {\heiti\sihao\bfseries #1}
+      {\heiti\sihao #1}
       \leaders\hbox{$\m@th\mkern \@dotsep mu\hbox{.}\mkern \@dotsep mu$}\hfill
       \nobreak{\normalfont\normalcolor #2}\par
       \penalty\@highpenalty
@@ -384,7 +386,7 @@
       \advance\leftskip\@tempdima
       \hskip -\leftskip
       \hskip 1.5em
-      {\heiti\sihao #1}\nobreak
+      {\songti\xiaosi #1}\nobreak
       \leaders\hbox{$\m@th\mkern \@dotsep mu\hbox{.}\mkern \@dotsep mu$}\hfill
       \nobreak{\normalfont\normalcolor #2}\par
     \endgroup
@@ -401,7 +403,7 @@
       \advance\leftskip\@tempdima
       \hskip -\leftskip
       \hskip 3em
-      {\heiti\xiaosi #1}\nobreak
+      {\dengxian\dawu #1}\nobreak
       \leaders\hbox{$\m@th\mkern \@dotsep mu\hbox{.}\mkern \@dotsep mu$}\hfill
       \nobreak{\normalfont\normalcolor #2}\par
     \endgroup
