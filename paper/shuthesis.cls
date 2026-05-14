@@ -266,7 +266,7 @@
 \renewcommand{\floatpagefraction}{0.60}
 \let\old@tabular\@tabular
 \def\shu@tabular{\wuhao\songti\old@tabular}
-\DeclareCaptionLabelFormat{shu}{{\heiti #1~{\bfseries\rmfamily #2}}}
+\DeclareCaptionLabelFormat{shu}{{\heiti #1~\textbf{#2}}}
 \DeclareCaptionLabelSeparator{shu}{\hspace{1em}}
 \DeclareCaptionFont{shu}{\xiaosi\heiti}
 \captionsetup{labelformat=shu,labelsep=shu,font=shu}
