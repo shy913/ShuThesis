@@ -265,10 +265,10 @@
 \renewcommand{\bottomfraction}{0.65}
 \renewcommand{\floatpagefraction}{0.60}
 \let\old@tabular\@tabular
-\def\shu@tabular{\dawu[1.5]\old@tabular}
-\DeclareCaptionLabelFormat{shu}{{\dawu[1.5]\heiti #1~\rmfamily #2}}
+\def\shu@tabular{\wuhao\songti\old@tabular}
+\DeclareCaptionLabelFormat{shu}{{\heiti #1~{\bfseries\rmfamily #2}}}
 \DeclareCaptionLabelSeparator{shu}{\hspace{1em}}
-\DeclareCaptionFont{shu}{\dawu[1.5]}
+\DeclareCaptionFont{shu}{\xiaosi\heiti}
 \captionsetup{labelformat=shu,labelsep=shu,font=shu}
 \captionsetup[table]{position=top,belowskip={12bp-\intextsep},aboveskip=6bp}
 \captionsetup[figure]{position=bottom,belowskip={12bp-\intextsep},aboveskip=6bp}
