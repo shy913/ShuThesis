@@ -4,6 +4,8 @@
 import subprocess
 import sys
 import os
+import shutil
+import glob
 from tqdm import tqdm
 
 def run_command(cmd, cwd=None, description="", allow_retcodes=None, env=None):
@@ -43,17 +45,20 @@ def compile_latex(project_dir, main_file="main"):
     """
     在 project_dir 中编译 LaTeX 文档。
     main_file 是不带 .tex 扩展名的文件名。
-
     pdflatex -interaction=nonstopmode 即使成功输出 PDF，
     也可能因非致命错误返回非零退出码。因此允许返回码 {0, 1}。
-    fontgen_dir = os.path.join(os.path.dirname(project_dir), "fontgen")
+    """
+    # 将 fontgen/ 中的 .tfm 字体文件复制到 paper/ 目录下
+    # pdflatex 自动搜索当前目录下的 .tfm 文件，无需 TEXINPUTS
+    base_dir = os.path.dirname(project_dir)
+    fontgen_dir = os.path.join(base_dir, "fontgen")
     if os.path.isdir(fontgen_dir):
-        sep = ";" if sys.platform == "win32" else ":"
-        old_texinputs = os.environ.get("TEXINPUTS", "")
-        texinputs = f"{fontgen_dir}//{sep}{old_texinputs}"
-        latex_env = {"TEXINPUTS": texinputs}
-    else:
-        latex_env = None
+        for f in glob.glob(os.path.join(fontgen_dir, "*.tfm")):
+            shutil.copy2(f, project_dir)
+        missing_dir = os.path.join(fontgen_dir, "missing")
+        if os.path.isdir(missing_dir):
+            for f in glob.glob(os.path.join(missing_dir, "*.tfm")):
+                shutil.copy2(f, project_dir)
 
     steps = [
         (["pdflatex", "-interaction=nonstopmode", main_file],
@@ -70,7 +75,7 @@ def compile_latex(project_dir, main_file="main"):
         for cmd, desc, allow_retcodes in steps:
             pbar.set_description(f"正在执行: {desc}")
             success = run_command(cmd, cwd=project_dir, description=desc,
-                                  allow_retcodes=allow_retcodes, env=latex_env)
+                                  allow_retcodes=allow_retcodes)
             if not success:
                 print(f"\n❌ 编译失败，停止于步骤: {desc}")
                 sys.exit(1)

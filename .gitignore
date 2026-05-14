@@ -212,3 +212,9 @@ __marimo__/
 # 编译结果
 paper/out/*
 *.aux
+# Font subfont cache copied from fontgen/ by compile.py
+paper/unidengxian*.*
+paper/*.tfm
+paper/*.pfb
+paper/*.enc
+paper/*.afm
