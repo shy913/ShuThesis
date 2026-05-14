@@ -54,11 +54,15 @@ def compile_latex(project_dir, main_file="main"):
     fontgen_dir = os.path.join(base_dir, "fontgen")
     if os.path.isdir(fontgen_dir):
         for f in glob.glob(os.path.join(fontgen_dir, "*.tfm")):
-            shutil.copy2(f, project_dir)
+            dst = os.path.join(project_dir, os.path.basename(f))
+            if not os.path.exists(dst):
+                shutil.copy2(f, project_dir)
         missing_dir = os.path.join(fontgen_dir, "missing")
         if os.path.isdir(missing_dir):
             for f in glob.glob(os.path.join(missing_dir, "*.tfm")):
-                shutil.copy2(f, project_dir)
+                dst = os.path.join(project_dir, os.path.basename(f))
+                if not os.path.exists(dst):
+                    shutil.copy2(f, project_dir)
 
     steps = [
         (["pdflatex", "-interaction=nonstopmode", main_file],
