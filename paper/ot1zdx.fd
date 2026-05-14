@@ -1,0 +1,3 @@
+\DeclareFontFamily{OT1}{zdx}{}
+\DeclareFontShape{OT1}{zdx}{m}{n}{<-> unidengxian00}{}
+\DeclareFontShape{OT1}{zdx}{bx}{n}{<-> unidengxian00}{}

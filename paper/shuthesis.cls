@@ -401,7 +401,7 @@
       \advance\leftskip\@tempdima
       \hskip -\leftskip
       \hskip 3em
-      {\heiti\xiaosi #1}\nobreak
+      {\dengxian\zdx\xiaosi #1}\nobreak
       \leaders\hbox{$\m@th\mkern \@dotsep mu\hbox{.}\mkern \@dotsep mu$}\hfill
       \nobreak{\normalfont\normalcolor #2}\par
     \endgroup
@@ -685,6 +685,11 @@
  \vspace{32bp}{\sihao\heiti\centerline{#1}}\par\vspace{14bp}}
 \AtEndOfClass{\input{shuthesis.cfg}}
 \AtEndOfClass{\sloppy}
+\AtBeginDocument{%
+  \pdfmapline{=unidengxian@Unicode@   <dengxian.ttf}%
+}
+\newcommand\dengxian{\CJKfamily{zhdx}}
+\newcommand\zdx{\fontfamily{zdx}\selectfont}
 \endinput
 %%
 %% End of file `shuthesis.cls'.
