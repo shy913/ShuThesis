@@ -6,7 +6,7 @@ import sys
 import os
 from tqdm import tqdm
 
-def run_command(cmd, cwd=None, description="", allow_retcodes=None):
+def run_command(cmd, cwd=None, description="", allow_retcodes=None, env=None):
     """
     执行外部命令，实时打印输出，并返回是否成功。
     显式指定 UTF-8 编码，避免 GBK 解码错误。
@@ -14,11 +14,15 @@ def run_command(cmd, cwd=None, description="", allow_retcodes=None):
     if allow_retcodes is None:
         allow_retcodes = {0}
     print(f"\n{'='*60}\n执行命令: {' '.join(cmd)}\n描述: {description}\n{'='*60}")
+    process_env = os.environ.copy()
+    if env:
+        process_env.update(env)
     process = subprocess.Popen(
         cmd,
         stdout=subprocess.PIPE,
         stderr=subprocess.STDOUT,
         cwd=cwd,
+        env=process_env,
         text=True,
         encoding='utf-8',
         errors='replace',
@@ -42,7 +46,15 @@ def compile_latex(project_dir, main_file="main"):
 
     pdflatex -interaction=nonstopmode 即使成功输出 PDF，
     也可能因非致命错误返回非零退出码。因此允许返回码 {0, 1}。
-    """
+    fontgen_dir = os.path.join(os.path.dirname(project_dir), "fontgen")
+    if os.path.isdir(fontgen_dir):
+        sep = ";" if sys.platform == "win32" else ":"
+        old_texinputs = os.environ.get("TEXINPUTS", "")
+        texinputs = f"{fontgen_dir}//{sep}{old_texinputs}"
+        latex_env = {"TEXINPUTS": texinputs}
+    else:
+        latex_env = None
+
     steps = [
         (["pdflatex", "-interaction=nonstopmode", main_file],
          "第一次 pdflatex 编译", {0, 1}),
@@ -58,7 +70,7 @@ def compile_latex(project_dir, main_file="main"):
         for cmd, desc, allow_retcodes in steps:
             pbar.set_description(f"正在执行: {desc}")
             success = run_command(cmd, cwd=project_dir, description=desc,
-                                  allow_retcodes=allow_retcodes)
+                                  allow_retcodes=allow_retcodes, env=latex_env)
             if not success:
                 print(f"\n❌ 编译失败，停止于步骤: {desc}")
                 sys.exit(1)
