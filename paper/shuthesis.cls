@@ -214,8 +214,8 @@
   \fancyhead{}
   % \fancyhead[LE]{\wuhao\kaishu 上海大学本科毕业论文（设计）}
   % \fancyhead[LO]{\wuhao\kaishu 上海大学本科毕业论文（设计）}
-  \fancyhead[LE]{\xiaowu 上海大学本科毕业论文（设计）}
-  \fancyhead[LO]{\xiaowu 上海大学本科毕业论文（设计）}
+  \fancyhead[LE]{\wuhao\songti 上海大学本科毕业论文（设计）}
+  \fancyhead[LO]{\wuhao\songti 上海大学本科毕业论文（设计）}
   % \fancyhead[CE]{\wuhao\kaishu 上海大学本科毕业论文（设计）}
   \fancyfoot{}
   \fancyfoot[C]{\wuhao\thepage}
@@ -223,8 +223,8 @@
   \renewcommand{\footrulewidth}{0pt}}
 \fancypagestyle{shu@headings@nopagenum}{%
   \fancyhead{}
-  \fancyhead[LE]{\xiaowu 上海大学本科毕业论文（设计）}
-  \fancyhead[LO]{\xiaowu 上海大学本科毕业论文（设计）}
+  \fancyhead[LE]{\wuhao\songti 上海大学本科毕业论文（设计）}
+  \fancyhead[LO]{\wuhao\songti 上海大学本科毕业论文（设计）}
   \fancyfoot{}
   \renewcommand{\headrulewidth}{0.7pt}
   \renewcommand{\footrulewidth}{0pt}}
@@ -384,7 +384,7 @@
       \advance\leftskip\@tempdima
       \hskip -\leftskip
       \hskip 1.5em
-      {\heiti\sihao #1}\nobreak
+      {\songti\sihao #1}\nobreak
       \leaders\hbox{$\m@th\mkern \@dotsep mu\hbox{.}\mkern \@dotsep mu$}\hfill
       \nobreak{\normalfont\normalcolor #2}\par
     \endgroup
