@@ -1,0 +1,5 @@
+\ProvidesFile{c70zhdx.fd}%
+  [2026/05/14 v1.0 Chinese font definition for DengXian]
+\DeclareFontFamily{C70}{zhdx}{\hyphenchar\font\m@ne}
+\DeclareFontShape{C70}{zhdx}{m}{n}{<-> CJK * unidengxian}{\CJKnormal}
+\endinput

@@ -214,8 +214,8 @@
   \fancyhead{}
   % \fancyhead[LE]{\wuhao\kaishu 上海大学本科毕业论文（设计）}
   % \fancyhead[LO]{\wuhao\kaishu 上海大学本科毕业论文（设计）}
-  \fancyhead[LE]{\xiaowu 上海大学本科毕业论文（设计）}
-  \fancyhead[LO]{\xiaowu 上海大学本科毕业论文（设计）}
+  \fancyhead[LE]{\wuhao\songti 上海大学本科毕业论文（设计）}
+  \fancyhead[LO]{\wuhao\songti 上海大学本科毕业论文（设计）}
   % \fancyhead[CE]{\wuhao\kaishu 上海大学本科毕业论文（设计）}
   \fancyfoot{}
   \fancyfoot[C]{\wuhao\thepage}
@@ -223,8 +223,8 @@
   \renewcommand{\footrulewidth}{0pt}}
 \fancypagestyle{shu@headings@nopagenum}{%
   \fancyhead{}
-  \fancyhead[LE]{\xiaowu 上海大学本科毕业论文（设计）}
-  \fancyhead[LO]{\xiaowu 上海大学本科毕业论文（设计）}
+  \fancyhead[LE]{\wuhao\songti 上海大学本科毕业论文（设计）}
+  \fancyhead[LO]{\wuhao\songti 上海大学本科毕业论文（设计）}
   \fancyfoot{}
   \renewcommand{\headrulewidth}{0.7pt}
   \renewcommand{\footrulewidth}{0pt}}
@@ -265,10 +265,10 @@
 \renewcommand{\bottomfraction}{0.65}
 \renewcommand{\floatpagefraction}{0.60}
 \let\old@tabular\@tabular
-\def\shu@tabular{\dawu[1.5]\old@tabular}
-\DeclareCaptionLabelFormat{shu}{{\dawu[1.5]\heiti #1~\rmfamily #2}}
+\def\shu@tabular{\wuhao\songti\old@tabular}
+\DeclareCaptionLabelFormat{shu}{{\heiti #1~\textbf{#2}}}
 \DeclareCaptionLabelSeparator{shu}{\hspace{1em}}
-\DeclareCaptionFont{shu}{\dawu[1.5]}
+\DeclareCaptionFont{shu}{\xiaosi\heiti\bfseries}
 \captionsetup{labelformat=shu,labelsep=shu,font=shu}
 \captionsetup[table]{position=top,belowskip={12bp-\intextsep},aboveskip=6bp}
 \captionsetup[figure]{position=bottom,belowskip={12bp-\intextsep},aboveskip=6bp}
@@ -384,7 +384,7 @@
       \advance\leftskip\@tempdima
       \hskip -\leftskip
       \hskip 1.5em
-      {\heiti\sihao #1}\nobreak
+      {\songti\sihao #1}\nobreak
       \leaders\hbox{$\m@th\mkern \@dotsep mu\hbox{.}\mkern \@dotsep mu$}\hfill
       \nobreak{\normalfont\normalcolor #2}\par
     \endgroup
@@ -401,7 +401,7 @@
       \advance\leftskip\@tempdima
       \hskip -\leftskip
       \hskip 3em
-      {\heiti\xiaosi #1}\nobreak
+      {\dengxian\zdx\xiaosi #1}\nobreak
       \leaders\hbox{$\m@th\mkern \@dotsep mu\hbox{.}\mkern \@dotsep mu$}\hfill
       \nobreak{\normalfont\normalcolor #2}\par
     \endgroup
@@ -685,6 +685,11 @@
  \vspace{32bp}{\sihao\heiti\centerline{#1}}\par\vspace{14bp}}
 \AtEndOfClass{\input{shuthesis.cfg}}
 \AtEndOfClass{\sloppy}
+\AtBeginDocument{%
+  \pdfmapline{=unidengxian@Unicode@   <dengxian.ttf}%
+}
+\newcommand\dengxian{\CJKfamily{zhdx}}
+\newcommand\zdx{\fontfamily{zdx}\selectfont}
 \endinput
 %%
 %% End of file `shuthesis.cls'.
