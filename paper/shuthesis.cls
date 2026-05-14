@@ -268,7 +268,7 @@
 \def\shu@tabular{\wuhao\songti\old@tabular}
 \DeclareCaptionLabelFormat{shu}{{\heiti #1~\textbf{#2}}}
 \DeclareCaptionLabelSeparator{shu}{\hspace{1em}}
-\DeclareCaptionFont{shu}{\xiaosi\heiti}
+\DeclareCaptionFont{shu}{\xiaosi\heiti\bfseries}
 \captionsetup{labelformat=shu,labelsep=shu,font=shu}
 \captionsetup[table]{position=top,belowskip={12bp-\intextsep},aboveskip=6bp}
 \captionsetup[figure]{position=bottom,belowskip={12bp-\intextsep},aboveskip=6bp}
