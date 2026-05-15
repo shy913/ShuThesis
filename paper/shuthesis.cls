@@ -98,6 +98,16 @@
   \RequirePackage{pifont}
 \fi
 \RequirePackage{CJKfntef}
+%% Fix CJKb fake bold for SimHei:
+%% pdfLaTeX + CJK.sty: \bfseries triggers CJKb (overstriking fake bold via
+%% the \CJKbold macro), causing Chinese to look "doubly bold" AND tripled
+%% characters on copy-paste. SimHei is already bold, disable overstriking.
+%% Latin letters still get TNR Bold from \bfseries — no change.
+\AtBeginDocument{
+  \makeatletter
+  \let\CJKbold\CJKnormal
+  \makeatother
+}
 \RequirePackage[amsmath,thmmarks,hyperref]{ntheorem}
 \RequirePackage{array}
 \RequirePackage{longtable}
@@ -266,7 +276,7 @@
 \renewcommand{\floatpagefraction}{0.60}
 \let\old@tabular\@tabular
 \def\shu@tabular{\wuhao\songti\old@tabular}
-\DeclareCaptionLabelFormat{shu}{{\heiti #1~\textbf{#2}}}
+\DeclareCaptionLabelFormat{shu}{#1~#2}
 \DeclareCaptionLabelSeparator{shu}{\hspace{1em}}
 \DeclareCaptionFont{shu}{\xiaosi\heiti\bfseries}
 \captionsetup{labelformat=shu,labelsep=shu,font=shu}
